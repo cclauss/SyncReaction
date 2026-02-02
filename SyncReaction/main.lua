@@ -18,12 +18,10 @@ if package.config:sub(1,1) == '/' then
   python_cmd = "python3"
   bin_path = utils.join_path(mp.get_script_directory(), "bin/SyncReaction.bin")
   default_venv_bin = mp.command_native({"expand-path", "~~/.mpv_venv/bin/python"})
-  -- new_ipc_server = "/tmp/mpvsocket"
 else
   python_cmd = "py"
   bin_path = utils.join_path(mp.get_script_directory(), "bin/SyncReaction.exe")
   default_venv_bin = mp.command_native({"expand-path", "~~/.mpv_venv/Scripts/python.exe"})
-  -- new_ipc_server = "\\\\.\\pipe\\tmp\\mpvsocket"
 end
 
 if utils.file_info(bin_path) == nil then
@@ -51,8 +49,6 @@ local function startScript(additional_args)
     end
 
     local arguments
-
-    print(python_cmd)
 
     if bin_path then
       arguments = {
