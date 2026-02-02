@@ -48,6 +48,10 @@ While the script is running you can perform small adjustment to the delay using 
 |------------|---------------|-------------|
 |Alt+n       |lessDelay      | add -0.05 to delay |
 |Alt+m       |addDelay       | add 0.05 to delay |
+
+
+>Support for syncing with multiple youtube videos is available but is still experimental. When connected to multiple videos, the key bindings above will change delay for the youtube video currently in focus. If you want to change delay for all videos at once use `Alt+Shift+n` and `Alt+Shift+m`.
+
 ## Installation
 
 There are two parts to this project that you need to install: the mpv script and a userscript to interact with the browser. The following sections will guide you through the setup process. 
@@ -133,6 +137,8 @@ Open Userscript extension page and change the following line in the installed us
 Generate a self signed SSL certificate. I followed this [video](https://www.youtube.com/watch?v=VH4gXcvkmOY).
 
 Take the `cert-key.pem` and `fullchain.pem` files that you generated and place them into `<mpv config directory>/script-opts/SyncReaction`. Create any folder that does not exist.
+
+Open `main.lua` in a text editor and change `use_ssl` to `true`
 
 
 ## Dependencies
