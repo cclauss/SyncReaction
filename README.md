@@ -128,7 +128,7 @@ Either use the file from the release and drop it on the correct extension page o
 You might need to grant permission to access the web page the first time the userscript runs.
 
 #### Safari extra steps
-If you are using Safari you will need a few more stepts before you can use the script. As far as I am aware Safari does not allow to connect to a `ws` server from a `https` page such as YouTube, so you will need to switch to `wss`. If you are not comfortable with using the terminal you might want to just switch to a different browser to use this script. 
+If you are using Safari you will need a few more steps before you can use the script. As far as I am aware Safari does not allow to connect to a `ws` server from a `https` page such as YouTube, so you will need to switch to `wss`. If you are not comfortable with using the terminal you might want to just switch to a different browser to use this script. 
 
 Open Userscript extension page and change the following line in the installed userscript.
 
@@ -139,6 +139,14 @@ Generate a self signed SSL certificate. I followed this [video](https://www.yout
 Take the `cert-key.pem` and `fullchain.pem` files that you generated and place them into `<mpv config directory>/script-opts/SyncReaction`. Create any folder that does not exist.
 
 Open `main.lua` in a text editor and change `use_ssl` to `true`
+
+## TODO
+
+- [ ] Finish implementation of general html5 video userscript
+- [ ] Improve setup process
+- [ ] Add option to modify settings directly from mpv
+- [ ] Expose new options to users to easily modify accuracy and frequency of sync checks 
+
 
 
 ## Dependencies
